@@ -9,15 +9,20 @@ import SwiftUI
 
 final class ContentViewModel: ObservableObject {
 
-    private let circleScene = CircleScene()
-    private let boxScene = BoxScene()
+    private let twoCircleScene = TwoCircleScene()
+    private let twoBoxScene = TwoBoxScene()
+    private let boxStackScene = BoxStackScene()
     
-    var scenes: [FixScene] = [.circle, .box]
-    private (set) var index = PersistInt(key: "FixSceneIndex", nilValue: FixScene.circle.rawValue)
+    var scenes: [FixScene] = [
+        .twoCircle,
+        .twoBox,
+        .boxStack
+    ]
+    private (set) var index = PersistInt(key: "FixSceneIndex", nilValue: FixScene.twoCircle.rawValue)
     
     
     @Published
-    var selection: FixScene = .circle {
+    var selection: FixScene = .twoCircle {
         didSet {
             index.value = selection.rawValue
         }
@@ -25,10 +30,12 @@ final class ContentViewModel: ObservableObject {
 
     @ViewBuilder var contentView: some View {
         switch selection {
-        case .circle:
-            circleScene.makeView()
-        case .box:
-            boxScene.makeView()
+        case .twoCircle:
+            twoCircleScene.makeView()
+        case .twoBox:
+            twoBoxScene.makeView()
+        case .boxStack:
+            boxStackScene.makeView()
         }
     }
     

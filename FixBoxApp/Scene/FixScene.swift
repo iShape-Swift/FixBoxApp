@@ -11,15 +11,18 @@ enum FixScene: Int, Identifiable {
     
     var id: FixScene { self }
     
-    case circle
-    case box
+    case twoCircle
+    case twoBox
+    case boxStack
     
     var title: String {
         switch self {
-        case .circle:
-            return "circle"
-        case .box:
-            return "box"
+        case .twoCircle:
+            return "twoCircle"
+        case .twoBox:
+            return "twoBox"
+        case .boxStack:
+            return "boxStack"
         }
     }
     

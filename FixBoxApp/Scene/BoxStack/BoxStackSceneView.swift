@@ -1,16 +1,16 @@
 //
-//  BoxSceneView.swift
+//  BoxStackSceneView.swift
 //  FixBoxApp
 //
-//  Created by Nail Sharipov on 09.05.2023.
+//  Created by Nail Sharipov on 10.05.2023.
 //
 
 import SwiftUI
 
-struct BoxSceneView: View {
- 
+struct BoxStackSceneView: View {
+    
     @ObservedObject
-    var scene: BoxScene
+    var scene: BoxStackScene
     
     var body: some View {
         GeometryReader { proxy in
@@ -23,14 +23,14 @@ struct BoxSceneView: View {
         return ZStack {
             Color.white
 
-            Path { path in
-                path.addLines(scene.points)
-                path.closeSubpath()
+            ForEach(scene.boxes) { box in
+                BoxShape(box: box)
             }
-            .strokedPath(.init(lineWidth: 2))
-            .foregroundColor(.blue)
             
+        }.onAppear() {
+            scene.onAppear()
+        }.onDisappear {
+            scene.onDisappear()
         }
     }
-    
 }

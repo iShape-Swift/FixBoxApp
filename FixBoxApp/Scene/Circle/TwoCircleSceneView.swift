@@ -1,5 +1,5 @@
 //
-//  CircleSceneView.swift
+//  TwoCircleSceneView.swift
 //  FixBoxApp
 //
 //  Created by Nail Sharipov on 09.05.2023.
@@ -7,10 +7,10 @@
 
 import SwiftUI
 
-struct CircleSceneView: View {
+struct TwoCircleSceneView: View {
  
     @ObservedObject
-    var scene: CircleScene
+    var scene: TwoCircleScene
     
     var body: some View {
         GeometryReader { proxy in
@@ -23,12 +23,14 @@ struct CircleSceneView: View {
         return ZStack {
             Color.white
 
-            Circle()
-                .size(width: 2 * scene.radius, height: 2 * scene.radius)
-                .offset(scene.center)
-                .stroke(lineWidth: 2)
-                .foregroundColor(.green)
+            ForEach(scene.circles) { circle in
+                CircleShape(circle: circle)
+            }
             
+        }.onAppear() {
+            scene.onAppear()
+        }.onDisappear {
+            scene.onDisappear()
         }
     }
     

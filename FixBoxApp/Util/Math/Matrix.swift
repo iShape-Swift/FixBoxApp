@@ -16,6 +16,8 @@ struct Matrix {
     let toWorld: simd_float3x3
     let toScreen: simd_float3x3
     
+    var isZero: Bool { screenSize == .zero }
+    
     init(screenSize: CGSize, toWorld: simd_float3x3, toScreen: simd_float3x3) {
         self.screenSize = screenSize
         self.toWorld = toWorld
@@ -42,12 +44,12 @@ struct Matrix {
 
     
     @inlinable
-    func screen(word l: CGFloat) -> CGFloat {
+    func screen(world l: CGFloat) -> CGFloat {
         CGFloat(toScreen.columns.0.x) * l
     }
     
     @inlinable
-    func screen(wordPoint p: CGPoint) -> CGPoint {
+    func screen(worldPoint p: CGPoint) -> CGPoint {
         let v = simd_float3(Float(p.x), Float(p.y), 1)
         let r = toScreen * v
         return CGPoint(x: CGFloat(r.x), y: CGFloat(r.y))
@@ -57,7 +59,7 @@ struct Matrix {
     func screen(wordPoints points: [CGPoint]) -> [CGPoint] {
         var result = [CGPoint](repeating: .zero, count: points.count)
         for i in 0..<points.count {
-            result[i] = screen(wordPoint: points[i])
+            result[i] = screen(worldPoint: points[i])
         }
         return result
     }

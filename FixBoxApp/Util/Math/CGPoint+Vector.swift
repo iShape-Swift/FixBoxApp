@@ -6,6 +6,7 @@
 //
 
 import CoreGraphics
+import iFixFloat
 
 extension CGPoint {
     
@@ -38,4 +39,10 @@ func *(left: CGFloat, right: CGPoint) -> CGPoint {
 
 func /(left: CGPoint, right: CGFloat) -> CGPoint {
     return CGPoint(x: left.x / right, y: left.y / right)
+}
+
+extension Vec {
+    var point: CGPoint {
+        CGPoint(x: CGFloat(x), y: CGFloat(y))
+    }
 }
