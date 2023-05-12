@@ -52,7 +52,7 @@ struct BoxShape: View {
                 path.closeSubpath()
             }
             .strokedPath(.init(lineWidth: 2))
-            .rotation(Angle(radians: box.radians), anchor: .center)
+            .rotation(Angle(radians: -box.radians), anchor: .center)
             .foregroundColor(box.color)
         }
 //        .background(box.id == 0 ? .red : .clear)

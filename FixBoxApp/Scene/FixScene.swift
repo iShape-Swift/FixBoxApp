@@ -13,6 +13,7 @@ enum FixScene: Int, Identifiable {
     
     case twoCircle
     case twoBox
+    case boxAndFloor
     case boxStack
     
     var title: String {
@@ -21,6 +22,8 @@ enum FixScene: Int, Identifiable {
             return "twoCircle"
         case .twoBox:
             return "twoBox"
+        case .boxAndFloor:
+            return "boxAndFloor"
         case .boxStack:
             return "boxStack"
         }

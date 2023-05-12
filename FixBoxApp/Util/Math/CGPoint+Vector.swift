@@ -22,6 +22,10 @@ extension CGPoint {
         let l = self.length
         return CGPoint(x: x / l, y: y / l)
     }
+    
+    var fixVec: FixVec {
+        FixVec(x.fix, y.fix)
+    }
 
 }
 
@@ -41,8 +45,10 @@ func /(left: CGPoint, right: CGFloat) -> CGPoint {
     return CGPoint(x: left.x / right, y: left.y / right)
 }
 
-extension Vec {
+extension FixVec {
+    
     var point: CGPoint {
-        CGPoint(x: CGFloat(x), y: CGFloat(y))
+        CGPoint(x: x.cgFloat, y: y.cgFloat)
     }
+    
 }

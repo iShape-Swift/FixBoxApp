@@ -33,7 +33,7 @@ struct CircleShape: View {
             path.addLine(to: .init(x: circle.radius, y: 0))
         }
         .strokedPath(.init(lineWidth: 2))
-        .rotation(Angle(radians: circle.radians), anchor: .topLeading)
+        .rotation(Angle(radians: -circle.radians), anchor: .topLeading)
         .offset(.init(x: circle.center.x, y: circle.center.y))
         .foregroundColor(circle.color)
     }

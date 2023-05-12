@@ -1,17 +1,17 @@
 //
-//  TwoCircleSceneView.swift
+//  BoxAndFloorSceneView.swift
 //  FixBoxApp
 //
-//  Created by Nail Sharipov on 09.05.2023.
+//  Created by Nail Sharipov on 12.05.2023.
 //
 
 import SwiftUI
 import SpriteKit
 
-struct TwoCircleSceneView: View {
- 
+struct BoxAndFloorSceneView: View {
+    
     @ObservedObject
-    var scene: TwoCircleScene
+    var scene: BoxAndFloorScene
     
     var body: some View {
         GeometryReader { proxy in
@@ -22,5 +22,4 @@ struct TwoCircleSceneView: View {
     private func content(size: CGSize) -> some View {
         SpriteView(scene: scene.makeSpriteScene(screenSize: size))
     }
-    
 }

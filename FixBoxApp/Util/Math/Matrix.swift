@@ -24,18 +24,18 @@ struct Matrix {
         self.toScreen = toScreen
     }
     
-    init(screenSize: CGSize, scale: Float) {
+    init(screenSize: CGSize, scale: Float, inverseY: Bool) {
         self.screenSize = screenSize
                 
         let sx = scale
-        let sy = scale
+        let sy = inverseY ? -scale : scale
         
         let dx = Float(0.5 * Float(screenSize.width))
         let dy = Float(0.5 * Float(screenSize.height))
         
         toScreen = simd_float3x3([
             simd_float3(sx, 0, 0),
-            simd_float3(0, -sy, 0),
+            simd_float3(0, sy, 0),
             simd_float3(dx, dy, 1)
         ])
         

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SpriteKit
 
 struct BoxStackSceneView: View {
     
@@ -19,18 +20,6 @@ struct BoxStackSceneView: View {
     }
     
     private func content(size: CGSize) -> some View {
-        scene.initSize(screenSize: size)
-        return ZStack {
-            Color.white
-
-            ForEach(scene.boxes) { box in
-                BoxShape(box: box)
-            }
-            
-        }.onAppear() {
-            scene.onAppear()
-        }.onDisappear {
-            scene.onDisappear()
-        }
+        SpriteView(scene: scene.makeSpriteScene(screenSize: size))
     }
 }

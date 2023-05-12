@@ -11,11 +11,13 @@ final class ContentViewModel: ObservableObject {
 
     private let twoCircleScene = TwoCircleScene()
     private let twoBoxScene = TwoBoxScene()
+    private let boxAndFloorScene = BoxAndFloorScene()
     private let boxStackScene = BoxStackScene()
     
     var scenes: [FixScene] = [
         .twoCircle,
         .twoBox,
+        .boxAndFloor,
         .boxStack
     ]
     private (set) var index = PersistInt(key: "FixSceneIndex", nilValue: FixScene.twoCircle.rawValue)
@@ -34,6 +36,8 @@ final class ContentViewModel: ObservableObject {
             twoCircleScene.makeView()
         case .twoBox:
             twoBoxScene.makeView()
+        case .boxAndFloor:
+            boxAndFloorScene.makeView()
         case .boxStack:
             boxStackScene.makeView()
         }
