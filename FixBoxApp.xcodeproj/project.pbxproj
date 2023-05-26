@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		540D16AD2A1E3D17009B7889 /* iConvex in Frameworks */ = {isa = PBXBuildFile; productRef = 540D16AC2A1E3D17009B7889 /* iConvex */; };
+		54107C9F2A1E5EF7007DFE93 /* DominoScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54107C9E2A1E5EF7007DFE93 /* DominoScene.swift */; };
+		54107CA12A1E5F09007DFE93 /* DominoSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54107CA02A1E5F09007DFE93 /* DominoSceneView.swift */; };
 		541262F42A0E27FE008BED8F /* BoxAndFloorScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541262F32A0E27FD008BED8F /* BoxAndFloorScene.swift */; };
 		541262F62A0E2809008BED8F /* BoxAndFloorSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541262F52A0E2809008BED8F /* BoxAndFloorSceneView.swift */; };
 		541262FB2A0E310D008BED8F /* CircleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 541262FA2A0E310D008BED8F /* CircleNode.swift */; };
@@ -39,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		540D16AB2A1E3D08009B7889 /* iConvex */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = iConvex; path = ../iConvex; sourceTree = "<group>"; };
+		54107C9E2A1E5EF7007DFE93 /* DominoScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominoScene.swift; sourceTree = "<group>"; };
+		54107CA02A1E5F09007DFE93 /* DominoSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DominoSceneView.swift; sourceTree = "<group>"; };
 		541262F32A0E27FD008BED8F /* BoxAndFloorScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxAndFloorScene.swift; sourceTree = "<group>"; };
 		541262F52A0E2809008BED8F /* BoxAndFloorSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxAndFloorSceneView.swift; sourceTree = "<group>"; };
 		541262FA2A0E310D008BED8F /* CircleNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleNode.swift; sourceTree = "<group>"; };
@@ -77,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				540D16AD2A1E3D17009B7889 /* iConvex in Frameworks */,
 				54FF59282A0A43C2002197F2 /* iFixBox in Frameworks */,
 				54FF592A2A0A43C2002197F2 /* iFixFloat in Frameworks */,
 			);
@@ -85,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		54107C9D2A1E5EE3007DFE93 /* Domino */ = {
+			isa = PBXGroup;
+			children = (
+				54107C9E2A1E5EF7007DFE93 /* DominoScene.swift */,
+				54107CA02A1E5F09007DFE93 /* DominoSceneView.swift */,
+			);
+			path = Domino;
+			sourceTree = "<group>";
+		};
 		541262F22A0E27E2008BED8F /* BoxAndFloor */ = {
 			isa = PBXGroup;
 			children = (
@@ -160,6 +176,7 @@
 		548AEE242A0A320A00361D56 /* Scene */ = {
 			isa = PBXGroup;
 			children = (
+				54107C9D2A1E5EE3007DFE93 /* Domino */,
 				541262F22A0E27E2008BED8F /* BoxAndFloor */,
 				548AEE2A2A0A339400361D56 /* Circle */,
 				548AEE2B2A0A339B00361D56 /* Box */,
@@ -231,6 +248,7 @@
 			children = (
 				54FF59242A0A4327002197F2 /* iFixFloat */,
 				54FF59252A0A433D002197F2 /* iFixBox */,
+				540D16AB2A1E3D08009B7889 /* iConvex */,
 			);
 			name = Packages;
 			sourceTree = "<group>";
@@ -261,6 +279,7 @@
 			packageProductDependencies = (
 				54FF59272A0A43C2002197F2 /* iFixBox */,
 				54FF59292A0A43C2002197F2 /* iFixFloat */,
+				540D16AC2A1E3D17009B7889 /* iConvex */,
 			);
 			productName = FixBoxApp;
 			productReference = 548AEE0F2A0A30D400361D56 /* FixBoxApp.app */;
@@ -330,6 +349,8 @@
 				541262F42A0E27FE008BED8F /* BoxAndFloorScene.swift in Sources */,
 				54E01F392A0BDEE500DE1666 /* BoxStackScene.swift in Sources */,
 				541262FB2A0E310D008BED8F /* CircleNode.swift in Sources */,
+				54107CA12A1E5F09007DFE93 /* DominoSceneView.swift in Sources */,
+				54107C9F2A1E5EF7007DFE93 /* DominoScene.swift in Sources */,
 				541263052A0E6765008BED8F /* BodyNode.swift in Sources */,
 				548AEE362A0A351F00361D56 /* CGPoint+Vector.swift in Sources */,
 				54E01F372A0BDEDD00DE1666 /* BoxStackSceneView.swift in Sources */,
@@ -556,6 +577,10 @@
 /* End XCConfigurationList section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		540D16AC2A1E3D17009B7889 /* iConvex */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iConvex;
+		};
 		54FF59272A0A43C2002197F2 /* iFixBox */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = iFixBox;

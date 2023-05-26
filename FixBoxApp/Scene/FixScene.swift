@@ -15,6 +15,7 @@ enum FixScene: Int, Identifiable {
     case twoBox
     case boxAndFloor
     case boxStack
+    case domino
     
     var title: String {
         switch self {
@@ -26,6 +27,8 @@ enum FixScene: Int, Identifiable {
             return "boxAndFloor"
         case .boxStack:
             return "boxStack"
+        case .domino:
+            return "domino"
         }
     }
     

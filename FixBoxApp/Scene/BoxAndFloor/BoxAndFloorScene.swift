@@ -28,7 +28,7 @@ private final class SpriteScene: PhysicScene {
 
     override func didCreate() {
         self.addBox(size: .init(width: 2, height: 2), position: .init(x: 0, y: 5), angle: 0.04)
-        self.addBox(size: .init(width: 10, height: 2), position: .init(x: 0, y: -5), isDynamic: false)
+        self.addBox(size: .init(width: 16, height: 2), position: .init(x: 0, y: -5), isDynamic: false)
     }
     
 }

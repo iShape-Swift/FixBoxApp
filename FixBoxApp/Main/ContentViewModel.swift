@@ -13,12 +13,14 @@ final class ContentViewModel: ObservableObject {
     private let twoBoxScene = TwoBoxScene()
     private let boxAndFloorScene = BoxAndFloorScene()
     private let boxStackScene = BoxStackScene()
+    private let domonoScene = DominoScene()
     
     var scenes: [FixScene] = [
         .twoCircle,
         .twoBox,
         .boxAndFloor,
-        .boxStack
+        .boxStack,
+        .domino
     ]
     private (set) var index = PersistInt(key: "FixSceneIndex", nilValue: FixScene.twoCircle.rawValue)
     
@@ -40,6 +42,8 @@ final class ContentViewModel: ObservableObject {
             boxAndFloorScene.makeView()
         case .boxStack:
             boxStackScene.makeView()
+        case .domino:
+            domonoScene.makeView()
         }
     }
     
