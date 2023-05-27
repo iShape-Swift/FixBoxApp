@@ -12,6 +12,7 @@ final class ContentViewModel: ObservableObject {
     private let twoCircleScene = TwoCircleScene()
     private let twoBoxScene = TwoBoxScene()
     private let boxAndFloorScene = BoxAndFloorScene()
+    private let pushAwayScene = PushAwayScene()
     private let boxStackScene = BoxStackScene()
     private let domonoScene = DominoScene()
     
@@ -19,6 +20,7 @@ final class ContentViewModel: ObservableObject {
         .twoCircle,
         .twoBox,
         .boxAndFloor,
+        .pushAway,
         .boxStack,
         .domino
     ]
@@ -40,6 +42,8 @@ final class ContentViewModel: ObservableObject {
             twoBoxScene.makeView()
         case .boxAndFloor:
             boxAndFloorScene.makeView()
+        case .pushAway:
+            pushAwayScene.makeView()
         case .boxStack:
             boxStackScene.makeView()
         case .domino:

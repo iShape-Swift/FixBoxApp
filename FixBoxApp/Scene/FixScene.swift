@@ -14,6 +14,7 @@ enum FixScene: Int, Identifiable {
     case twoCircle
     case twoBox
     case boxAndFloor
+    case pushAway
     case boxStack
     case domino
     
@@ -25,6 +26,8 @@ enum FixScene: Int, Identifiable {
             return "twoBox"
         case .boxAndFloor:
             return "boxAndFloor"
+        case .pushAway:
+            return "pushAway"
         case .boxStack:
             return "boxStack"
         case .domino:

@@ -26,24 +26,21 @@ final class DominoScene: ObservableObject {
 
 private final class SpriteScene: PhysicScene {
 
+    let material = Material(bounce: 256, friction: 768, density: .unit, airLinearFriction: .unit, airAngularFriction: .unit)
+    
     override func didCreate() {
-//        self.addBox(size: .init(width: 2, height: 2), position: .init(x: 0, y: 5), angle: 0.04)
-//        self.addBox(size: .init(width: 16, height: 2), position: .init(x: 0, y: -5), isDynamic: false)
-        
         let floorHeight: CGFloat = 1
-        let count = 4
+        let n = 3
         let dominoHeight: CGFloat = 0.5
         
         let a = 5 * dominoHeight
-        let b = 5 * dominoHeight
+        let b = dominoHeight
         let h = 0.5 * (a + b)
         
-        var posY = -0.5 * (a * CGFloat(count) + floorHeight)
-        self.addBox(size: .init(width: 16, height: 2), position: .init(x: 0, y: posY), isDynamic: false)
+        var posY = -0.5 * (a * CGFloat(n) + floorHeight)
+        self.addBox(size: .init(width: 32, height: floorHeight), position: .init(x: 0, y: posY), material: material, isDynamic: false)
         
-        posY += 0.5 * dominoHeight
-        
-        var n = count
+        posY += dominoHeight
 
         var posX = -0.5 * CGFloat(n) * a
         var y = posY + 0.5 * a
@@ -51,10 +48,10 @@ private final class SpriteScene: PhysicScene {
             var x = posX
             for _ in 0..<n-j {
                 if j > 0 {
-                    self.addBox(size: .init(width: a, height: b), position: .init(x: x, y: y - h))
+                    self.addBox(size: .init(width: a, height: b), position: .init(x: x, y: y - h), material: material)
                 }
-                self.addBox(size: .init(width: b, height: a), position: .init(x: x, y: y))
-                self.addBox(size: .init(width: a, height: b), position: .init(x: x, y: y + h))
+                self.addBox(size: .init(width: b, height: a), position: .init(x: x, y: y), material: material)
+                self.addBox(size: .init(width: a, height: b), position: .init(x: x, y: y + h), material: material)
                 x += a
             }
             posX += 0.5 * a
