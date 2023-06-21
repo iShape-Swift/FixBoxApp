@@ -35,8 +35,10 @@ class BodyNode: SKNode {
         let angle = body.transform.angle.double
         position = pos
         main.zRotation = angle
+
+        label.text = "\(body.id)"
         
-        label.text = String(format: "Vx: %.2f, Vy: %.2f, w: %.2f", body.velocity.linear.x.float, body.velocity.linear.y.float, body.velocity.angular.float)
+//        label.text = String(format: "Vx: %.2f, Vy: %.2f, w: %.2f", body.velocity.linear.x.float, body.velocity.linear.y.float, body.velocity.angular.float)
     }
 
 }

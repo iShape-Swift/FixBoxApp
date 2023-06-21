@@ -17,7 +17,7 @@ final class DominoScene: ObservableObject {
     }
     
     func makeSpriteScene(screenSize: CGSize) -> SKScene {
-        let scene = SpriteScene(size: screenSize, scale: 80, gravity: CGPoint(x: 0, y: -10).fixVec)
+        let scene = SpriteScene(size: screenSize, scale: 40, gravity: CGPoint(x: 0, y: -10).fixVec)
         scene.scaleMode = .fill
         return scene
     }
@@ -26,11 +26,11 @@ final class DominoScene: ObservableObject {
 
 private final class SpriteScene: PhysicScene {
 
-    let material = Material(bounce: 256, friction: 768, density: .unit, airLinearFriction: .unit, airAngularFriction: .unit)
+    let material = Material(bounce: 0, friction: 800, density: .unit, airLinearFriction: .unit, airAngularFriction: .unit)
     
     override func didCreate() {
         let floorHeight: CGFloat = 1
-        let n = 3
+        let n = 15
         let dominoHeight: CGFloat = 0.5
         
         let a = 5 * dominoHeight
