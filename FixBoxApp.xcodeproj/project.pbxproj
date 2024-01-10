@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -39,6 +39,9 @@
 		54E01F342A0BC55600DE1666 /* Looper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E01F332A0BC55600DE1666 /* Looper.swift */; };
 		54E01F372A0BDEDD00DE1666 /* BoxStackSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E01F362A0BDEDD00DE1666 /* BoxStackSceneView.swift */; };
 		54E01F392A0BDEE500DE1666 /* BoxStackScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54E01F382A0BDEE500DE1666 /* BoxStackScene.swift */; };
+		54EEDB642B4EAA410062D585 /* iFixFloat in Frameworks */ = {isa = PBXBuildFile; productRef = 54EEDB632B4EAA410062D585 /* iFixFloat */; };
+		54EEDB672B4EAA540062D585 /* iConvex in Frameworks */ = {isa = PBXBuildFile; productRef = 54EEDB662B4EAA540062D585 /* iConvex */; };
+		54EEDB6A2B4EAA6E0062D585 /* iFixBox in Frameworks */ = {isa = PBXBuildFile; productRef = 54EEDB692B4EAA6E0062D585 /* iFixBox */; };
 		54FF59282A0A43C2002197F2 /* iFixBox in Frameworks */ = {isa = PBXBuildFile; productRef = 54FF59272A0A43C2002197F2 /* iFixBox */; };
 		54FF592A2A0A43C2002197F2 /* iFixFloat in Frameworks */ = {isa = PBXBuildFile; productRef = 54FF59292A0A43C2002197F2 /* iFixFloat */; };
 /* End PBXBuildFile section */
@@ -87,9 +90,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54EEDB6A2B4EAA6E0062D585 /* iFixBox in Frameworks */,
 				540D16AD2A1E3D17009B7889 /* iConvex in Frameworks */,
+				54EEDB672B4EAA540062D585 /* iConvex in Frameworks */,
 				54FF59282A0A43C2002197F2 /* iFixBox in Frameworks */,
 				54FF592A2A0A43C2002197F2 /* iFixFloat in Frameworks */,
+				54EEDB642B4EAA410062D585 /* iFixFloat in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -294,6 +300,9 @@
 				54FF59272A0A43C2002197F2 /* iFixBox */,
 				54FF59292A0A43C2002197F2 /* iFixFloat */,
 				540D16AC2A1E3D17009B7889 /* iConvex */,
+				54EEDB632B4EAA410062D585 /* iFixFloat */,
+				54EEDB662B4EAA540062D585 /* iConvex */,
+				54EEDB692B4EAA6E0062D585 /* iFixBox */,
 			);
 			productName = FixBoxApp;
 			productReference = 548AEE0F2A0A30D400361D56 /* FixBoxApp.app */;
@@ -323,6 +332,11 @@
 				Base,
 			);
 			mainGroup = 548AEE062A0A30D400361D56;
+			packageReferences = (
+				54EEDB622B4EAA410062D585 /* XCLocalSwiftPackageReference "../iFixFloat" */,
+				54EEDB652B4EAA540062D585 /* XCLocalSwiftPackageReference "../iConvex" */,
+				54EEDB682B4EAA6E0062D585 /* XCLocalSwiftPackageReference "../iFixBox" */,
+			);
 			productRefGroup = 548AEE102A0A30D400361D56 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -592,10 +606,37 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		54EEDB622B4EAA410062D585 /* XCLocalSwiftPackageReference "../iFixFloat" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../iFixFloat;
+		};
+		54EEDB652B4EAA540062D585 /* XCLocalSwiftPackageReference "../iConvex" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../iConvex;
+		};
+		54EEDB682B4EAA6E0062D585 /* XCLocalSwiftPackageReference "../iFixBox" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../iFixBox;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
 		540D16AC2A1E3D17009B7889 /* iConvex */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = iConvex;
+		};
+		54EEDB632B4EAA410062D585 /* iFixFloat */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iFixFloat;
+		};
+		54EEDB662B4EAA540062D585 /* iConvex */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iConvex;
+		};
+		54EEDB692B4EAA6E0062D585 /* iFixBox */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = iFixBox;
 		};
 		54FF59272A0A43C2002197F2 /* iFixBox */ = {
 			isa = XCSwiftPackageProductDependency;

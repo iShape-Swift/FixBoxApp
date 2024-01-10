@@ -6,6 +6,7 @@
 //
 
 import SpriteKit
+import iShape
 import iFixBox
 import iFixFloat
 
@@ -19,7 +20,7 @@ class PhysicScene: SKScene {
     
     init(size: CGSize, scale: Float, gravity: FixVec = .zero) {
         matrix = Matrix(screenSize: size, scale: scale, inverseY: false)
-        world = World(boundary: Boundary(size: Size(x: 100.fix, y: 100.fix)), settings: .default, gravity: gravity, isDebug: true)
+        world = World(boundary: FixBnd(size: Size(x: 100.fix, y: 100.fix)), settings: .default, gravity: gravity, isDebug: true)
         super.init(size: size)
     }
     
@@ -71,8 +72,9 @@ class PhysicScene: SKScene {
     func addCircle(id: Int64 = -1, radius: CGFloat, position: CGPoint, angle: CGFloat = 0, velocity: CGPoint = .zero, angularVelocity: CGFloat = 0, material: Material = .ordinary, isDynamic: Bool = true) {
         let transform = Transform(position: position.fixVec, angle: angle.fix)
         let bodyId = id >= 0 ? id : self.findFreeId()
-        var body = Body(id: bodyId, transform: transform, isDynamic: isDynamic, material: material)
-        body.attach(shape: .init(radius: radius.fix))
+        let shape = Shape(radius: radius.fix)
+        let feature = self.world.calcFeature(shape: shape)
+        var body = Body(id: bodyId, transform: transform, shape: shape, feature: feature, isDynamic: isDynamic, material: material)
         
         let fixAngVel = angularVelocity.fix
         
@@ -92,8 +94,9 @@ class PhysicScene: SKScene {
     func addBox(id: Int64 = -1, size: CGSize, position: CGPoint, angle: CGFloat = 0, velocity: CGPoint = .zero, angularVelocity: CGFloat = 0, material: Material = .ordinary, isDynamic: Bool = true) {
         let transform = Transform(position: position.fixVec, angle: angle.fix)
         let bodyId = id >= 0 ? id : self.findFreeId()
-        var body = Body(id: bodyId, transform: transform, isDynamic: isDynamic, material: material)
-        body.attach(shape: .init(size: .init(size.width.fix, size.height.fix)))
+        let shape = Shape(size: .init(size.width.fix, size.height.fix))
+        let feature = self.world.calcFeature(shape: shape)
+        var body = Body(id: bodyId, transform: transform, shape: shape, feature: feature, isDynamic: isDynamic, material: material)
         
         let fixAngVel = angularVelocity.fix
         
